@@ -18,7 +18,9 @@ const quizProgress = document.getElementById("quizProgress");
 
 function filteredSpecies(){
   return SPECIES.filter(s=>{
-    const catOk = state.activeCat === "all" || s.cat === state.activeCat;
+    const catOk = state.activeCat === "all" ? true
+      : state.activeCat === "spotted" ? !!s.spotted
+      : s.cat === state.activeCat;
     const q = state.query.trim().toLowerCase();
     const queryOk = !q || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q);
     return catOk && queryOk;
@@ -36,7 +38,7 @@ function cardHTML(s){
           <img src="${s.img || ('images/' + s.id + '.jpg')}" alt="${s.name}" loading="lazy"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="fallback" style="display:none">${CAT_EMOJI[s.cat]}</div>
-          ${s.spotted ? '<div class="spotted-badge">🏝️ We found this!</div>' : ''}
+          ${s.spotted ? '<div class="spotted-badge">🏨 Around Hilton Key West Resort &amp; Marina</div>' : ''}
         </div>
         <div class="face-body">
           <p class="name">${s.name}</p>
