@@ -1,0 +1,279 @@
+/* ==========================================================
+   Caeleigh's Florida Keys Field Guide
+   Design: laminated dive-shop ID card, reef-depth palette
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root{
+  --navy: #0B3954;
+  --navy-deep: #072A3E;
+  --teal: #087E8B;
+  --cream: #F6F1E4;
+  --cream-card: #FFFDF7;
+  --coral: #FF6B4A;
+  --buoy: #FFC857;
+  --ink: #123241;
+
+  --cat-sharks: #D64545;
+  --cat-fish: #0E8C9E;
+  --cat-shells: #D9A441;
+  --cat-other: #7A5DA8;
+
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(6,30,45,.18);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height:100vh;
+}
+
+.mono{ font-family:'IBM Plex Mono', monospace; }
+
+/* ---------------- HEADER ---------------- */
+header.hero{
+  position:relative;
+  background: radial-gradient(1200px 500px at 15% -10%, #12557a 0%, var(--navy) 55%, var(--navy-deep) 100%);
+  color: #fff;
+  padding: 56px 24px 92px;
+  overflow:hidden;
+}
+header.hero .wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  position:relative;
+  z-index:2;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:12px;
+  color: var(--buoy);
+  margin-bottom:14px;
+  display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{ content:"⚓"; }
+h1.title{
+  font-family:'Baloo 2', cursive;
+  font-weight:800;
+  font-size: clamp(34px, 6vw, 62px);
+  line-height:1.02;
+  margin:0 0 14px;
+  transform: rotate(-0.6deg);
+}
+h1.title .accent{ color: var(--buoy); }
+.sub{
+  max-width: 640px;
+  font-size:17px;
+  line-height:1.55;
+  color:#DDEDF2;
+}
+.stats-row{
+  display:flex; gap:28px; flex-wrap:wrap;
+  margin-top:32px;
+}
+.stat{
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:14px;
+  padding:12px 18px;
+  min-width:120px;
+}
+.stat b{ display:block; font-family:'Baloo 2'; font-size:26px; color:var(--buoy); }
+.stat span{ font-size:12px; color:#CFE3EA; font-family:'IBM Plex Mono', monospace; letter-spacing:.03em; }
+
+/* wave divider */
+.wave{
+  position:absolute; left:0; right:0; bottom:-2px; height:70px;
+  background: var(--cream);
+  clip-path: polygon(0 40%, 5% 46%, 10% 40%, 15% 34%, 20% 40%, 25% 48%, 30% 40%, 35% 32%, 40% 40%, 45% 50%,
+                      50% 40%, 55% 32%, 60% 40%, 65% 48%, 70% 40%, 75% 34%, 80% 40%, 85% 48%, 90% 40%,
+                      95% 33%, 100% 40%, 100% 100%, 0 100%);
+}
+
+/* ---------------- CONTROLS ---------------- */
+.controls{
+  max-width:1100px; margin: -46px auto 0; padding: 0 24px 8px;
+  position:relative; z-index:3;
+}
+.controls-card{
+  background: var(--cream-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:18px 20px;
+  display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+  border: 2px solid #EDE3C8;
+}
+.search-box{
+  flex:1 1 220px;
+  display:flex; align-items:center; gap:8px;
+  background:#fff; border:2px solid #E7DFC8; border-radius:12px;
+  padding:10px 14px;
+}
+.search-box input{
+  border:none; outline:none; width:100%; font-family:'Inter'; font-size:15px; background:transparent;
+}
+.tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+.tab-btn{
+  position:relative;
+  font-family:'Baloo 2'; font-weight:600; font-size:14px;
+  border:none; cursor:pointer;
+  padding:9px 16px 9px 22px;
+  border-radius: 0 10px 10px 0;
+  color:#fff;
+  box-shadow: var(--shadow);
+  opacity:.55;
+  transition: opacity .15s ease, transform .15s ease;
+}
+.tab-btn:hover{ transform: translateY(-1px); }
+.tab-btn.active{ opacity:1; }
+.tab-btn[data-cat="all"]{ background: var(--navy); }
+.tab-btn[data-cat="sharks"]{ background: var(--cat-sharks); }
+.tab-btn[data-cat="fish"]{ background: var(--cat-fish); }
+.tab-btn[data-cat="shells"]{ background: var(--cat-shells); }
+.tab-btn[data-cat="other"]{ background: var(--cat-other); }
+
+.mode-btn{
+  font-family:'Baloo 2'; font-weight:700; font-size:14px;
+  background: var(--coral); color:#fff; border:none;
+  padding:10px 18px; border-radius:12px; cursor:pointer;
+  box-shadow: var(--shadow);
+}
+.mode-btn:hover{ filter:brightness(1.05); }
+.count-note{
+  font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#7a7360;
+  width:100%;
+}
+
+/* ---------------- GRID ---------------- */
+main{ max-width:1100px; margin:0 auto; padding: 26px 24px 90px; }
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap:20px;
+}
+
+/* ---------------- CARD ---------------- */
+.card{
+  perspective: 1400px;
+  min-height: 300px;
+}
+.card-inner{
+  position:relative; width:100%; height:100%; min-height:300px;
+  transform-style: preserve-3d;
+  transition: transform .55s cubic-bezier(.4,.2,.2,1);
+  cursor:pointer;
+}
+.card.flipped .card-inner{ transform: rotateY(180deg); }
+
+.face{
+  position:absolute; inset:0;
+  backface-visibility:hidden;
+  border-radius: var(--radius);
+  background: var(--cream-card);
+  box-shadow: var(--shadow);
+  border: 2px solid #EDE3C8;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.face.back{ transform: rotateY(180deg); padding:18px; }
+
+/* colored side tab, like the laminated dive-shop ID cards */
+.tabstrip{
+  position:absolute; top:0; left:0; bottom:0; width:9px;
+}
+[data-cat="sharks"] .tabstrip{ background: var(--cat-sharks); }
+[data-cat="fish"] .tabstrip{ background: var(--cat-fish); }
+[data-cat="shells"] .tabstrip{ background: var(--cat-shells); }
+[data-cat="other"] .tabstrip{ background: var(--cat-other); }
+
+/* hole punch, echoing the real fishcards.com laminated cards */
+.punch{
+  position:absolute; top:10px; right:14px;
+  width:14px; height:14px; border-radius:50%;
+  background: var(--cream);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.25);
+  z-index:2;
+}
+
+.media{
+  height:150px; margin-left:9px;
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+[data-cat="sharks"] .media{ background: linear-gradient(160deg,#5C7A8A,#1E4A5F); }
+[data-cat="fish"] .media{ background: linear-gradient(160deg,#4FB6C4,#0E5A66); }
+[data-cat="shells"] .media{ background: linear-gradient(160deg,#F0D9A0,#C99A3E); }
+[data-cat="other"] .media{ background: linear-gradient(160deg,#B79FD4,#5B4485); }
+.media img{ width:100%; height:100%; object-fit:cover; }
+.media .fallback{ font-size:52px; filter: drop-shadow(0 4px 6px rgba(0,0,0,.25)); }
+
+.spotted-badge{
+  position:absolute; bottom:8px; left:8px;
+  background: var(--buoy); color:#3a2600;
+  font-family:'IBM Plex Mono'; font-size:10.5px; font-weight:600;
+  padding:3px 8px; border-radius:8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+.face-body{ padding:14px 16px 16px; margin-left:9px; flex:1; display:flex; flex-direction:column; }
+.name{
+  font-family:'Baloo 2'; font-weight:700; font-size:18px; line-height:1.15;
+  color: var(--navy);
+  margin:0 0 4px;
+}
+.size{ font-size:12px; color:#7a7360; margin-bottom:auto; }
+.flip-hint{
+  font-size:11px; color:#9a8f6f; text-align:right; font-style:italic;
+}
+
+.face.back .name{ font-size:16px; margin-bottom:8px;}
+.back-scroll{ overflow-y:auto; flex:1; padding-right:4px; }
+.section-label{
+  font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+  color: var(--coral); margin: 10px 0 4px;
+}
+.section-label:first-child{ margin-top:0; }
+.desc-text, .role-text{ font-size:13px; line-height:1.5; color:#2c3e46; }
+
+/* ---------------- QUIZ MODE ---------------- */
+.quiz-bar{
+  display:none;
+  max-width:1100px; margin: 0 auto; padding: 0 24px 10px;
+  align-items:center; gap:14px; flex-wrap:wrap;
+}
+.quiz-bar.active{ display:flex; }
+.quiz-bar button{
+  font-family:'Baloo 2'; font-weight:700; font-size:14px;
+  border:none; cursor:pointer; padding:9px 16px; border-radius:10px;
+  background: var(--navy); color:#fff; box-shadow: var(--shadow);
+}
+.quiz-progress{ font-family:'IBM Plex Mono'; font-size:12.5px; color:#7a7360; }
+
+/* ---------------- FOOTER ---------------- */
+footer{
+  background: var(--navy-deep); color:#CFE3EA;
+  padding: 34px 24px 46px; text-align:center;
+  font-size:13px;
+}
+footer a{ color: var(--buoy); }
+
+.empty-state{
+  grid-column: 1/-1;
+  text-align:center; padding:50px 20px; color:#7a7360;
+  font-family:'Baloo 2'; font-size:18px;
+}
+
+@media (max-width: 560px){
+  .tabs{ width:100%; }
+  h1.title{ transform:none; }
+}
