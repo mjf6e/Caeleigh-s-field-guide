@@ -447,4 +447,12 @@ const SPECIES = [
 {id:"decorator-crab-skeleton", cat:"other", img:"images/decorator-crab-skeleton.jpg", name:"Decorator Crab (Skeleton)", size:"1–2 in", spotted:true,
   desc:"The leftover shell of a small crab that camouflages itself with attached algae, sponge, and debris using hooked bristles.",
   role:"In life, its habit of decorating itself moves small organisms like sponge and algae fragments around the reef, spreading them to new surfaces."},
+
+/* ============ BIRDS ============ */
+{id:"double-crested-cormorant", cat:"birds", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Double-crested_Cormorant_(Phalacrocorax_auritus)_-_Cancun_2020.jpg", name:"Double-crested Cormorant", size:"28–35 in, 4 ft wingspan", spotted:true,
+  desc:"A dark, long-necked diving bird often seen perched on docks or channel markers with its wings spread wide to dry, since its feathers aren't fully waterproof like a duck's.",
+  role:"It dives to catch small fish in marinas and along the shoreline, and by fishing heavily in nearshore waters it helps keep baitfish numbers from building up around docks and channel markers."},
+{id:"great-blue-heron", cat:"birds", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Great_Blue_Heron_Wading_2.jpg", name:"Great Blue Heron", size:"3.2–4.5 ft tall, 6 ft wingspan", spotted:true,
+  desc:"The tallest wading bird in the Keys, with a slate-blue-grey body, long S-curved neck, and dagger-like yellow bill. It stands motionless for long stretches before striking at prey with lightning speed.",
+  role:"By spearing fish, crabs, and small critters in shallow water along docks and mangroves, it keeps those populations from concentrating too heavily in the calm, food-rich shallows near shore."},
 ];
