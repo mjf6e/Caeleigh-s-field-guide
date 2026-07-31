@@ -19,7 +19,6 @@
   --cat-fish: #0E8C9E;
   --cat-shells: #D9A441;
   --cat-other: #7A5DA8;
-  --cat-birds: #4E7A6B;
 
   --radius: 18px;
   --shadow: 0 10px 30px rgba(6,30,45,.18);
@@ -141,7 +140,6 @@ h1.title .accent{ color: var(--buoy); }
 .tab-btn[data-cat="fish"]{ background: var(--cat-fish); }
 .tab-btn[data-cat="shells"]{ background: var(--cat-shells); }
 .tab-btn[data-cat="other"]{ background: var(--cat-other); }
-.tab-btn[data-cat="birds"]{ background: var(--cat-birds); }
 .tab-btn[data-cat="spotted"]{ background: var(--buoy); color:#3a2600; }
 
 .mode-btn{
@@ -197,7 +195,6 @@ main{ max-width:1100px; margin:0 auto; padding: 26px 24px 90px; }
 [data-cat="fish"] .tabstrip{ background: var(--cat-fish); }
 [data-cat="shells"] .tabstrip{ background: var(--cat-shells); }
 [data-cat="other"] .tabstrip{ background: var(--cat-other); }
-[data-cat="birds"] .tabstrip{ background: var(--cat-birds); }
 
 /* hole punch, echoing the real fishcards.com laminated cards */
 .punch{
@@ -218,7 +215,6 @@ main{ max-width:1100px; margin:0 auto; padding: 26px 24px 90px; }
 [data-cat="fish"] .media{ background: linear-gradient(160deg,#4FB6C4,#0E5A66); }
 [data-cat="shells"] .media{ background: linear-gradient(160deg,#F0D9A0,#C99A3E); }
 [data-cat="other"] .media{ background: linear-gradient(160deg,#B79FD4,#5B4485); }
-[data-cat="birds"] .media{ background: linear-gradient(160deg,#8FB8A8,#2F5347); }
 .media img{ width:100%; height:100%; object-fit:cover; }
 .media .fallback{ font-size:52px; filter: drop-shadow(0 4px 6px rgba(0,0,0,.25)); }
 
