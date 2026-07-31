@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caeleigh's Florida Keys Field Guide</title>
+<meta name="description" content="A flashcard field guide to the sharks, fish, shells, reef invertebrates, and birds of the Florida Keys.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Key West, Florida</p>
+    <h1 class="title">Caeleigh's<br><span class="accent">Florida Keys</span> Field Guide</h1>
+    <p class="sub">A flip-card guide to the sharks, fish, shells, reef critters, and birds we met on our trip &mdash; plus everything else swimming and flying around the same reef and marina. Tap any card to flip it over and learn its role in the ecosystem.</p>
+
+    <div class="stats-row">
+      <div class="stat"><b id="statTotal">0</b><span>TOTAL SPECIES</span></div>
+      <div class="stat"><b id="statSharks">0</b><span>SHARKS</span></div>
+      <div class="stat"><b id="statFish">0</b><span>FISH &amp; RAYS</span></div>
+      <div class="stat"><b id="statShells">0</b><span>SHELLS</span></div>
+      <div class="stat"><b id="statOther">0</b><span>INVERTEBRATES</span></div>
+      <div class="stat"><b id="statBirds">0</b><span>BIRDS</span></div>
+      <div class="stat"><b id="statSpotted">0</b><span>AROUND HILTON KEY WEST RESORT &amp; MARINA</span></div>
+    </div>
+  </div>
+  <div class="wave"></div>
+</header>
+
+<div class="controls">
+  <div class="controls-card">
+    <div class="search-box">
+      <span>🔍</span>
+      <input id="searchInput" type="text" placeholder="Search a creature by name...">
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-cat="all">All</button>
+      <button class="tab-btn" data-cat="sharks">🦈 Sharks</button>
+      <button class="tab-btn" data-cat="fish">🐠 Fish &amp; Rays</button>
+      <button class="tab-btn" data-cat="shells">🐚 Shells</button>
+      <button class="tab-btn" data-cat="other">🦀 Invertebrates</button>
+      <button class="tab-btn" data-cat="birds">🐦 Birds</button>
+      <button class="tab-btn" data-cat="spotted">🏨 Around Hilton Key West Resort &amp; Marina</button>
+    </div>
+    <button class="mode-btn" id="quizToggle">🎴 Quiz Me</button>
+    <p class="count-note" id="countNote"></p>
+  </div>
+</div>
+
+<div class="quiz-bar" id="quizBar">
+  <button id="quizNext">Next Card ➜</button>
+  <button id="quizShuffle">🔀 Reshuffle</button>
+  <button id="quizExit">✕ Exit Quiz</button>
+  <span class="quiz-progress" id="quizProgress"></span>
+</div>
+
+<main>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <p>Made for Caeleigh &mdash; a self-guided reference for the marine life of the Florida Keys. 🐠🦈🐚</p>
+  <p>Photos are sourced from <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> (public domain / Creative Commons licensed). See <a href="README.md">README.md</a> for photo credits and how to add more.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
