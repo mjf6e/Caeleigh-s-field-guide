@@ -1,7 +1,7 @@
 // Caeleigh's Florida Keys Field Guide — app logic
 
-const CAT_LABEL = { sharks:"Sharks", fish:"Fish & Rays", shells:"Shells & Mollusks", other:"Reef Invertebrates" };
-const CAT_EMOJI = { sharks:"🦈", fish:"🐠", shells:"🐚", other:"🦀" };
+const CAT_LABEL = { sharks:"Sharks", fish:"Fish & Rays", shells:"Shells & Mollusks", other:"Reef Invertebrates", birds:"Birds" };
+const CAT_EMOJI = { sharks:"🦈", fish:"🐠", shells:"🐚", other:"🦀", birds:"🐦" };
 
 let state = {
   activeCat: "all",
@@ -136,13 +136,14 @@ document.getElementById("quizShuffle").addEventListener("click", ()=>{
 });
 
 function fillStats(){
-  const counts = { sharks:0, fish:0, shells:0, other:0 };
+  const counts = { sharks:0, fish:0, shells:0, other:0, birds:0 };
   SPECIES.forEach(s=> counts[s.cat]++ );
   document.getElementById("statTotal").textContent = SPECIES.length;
   document.getElementById("statSharks").textContent = counts.sharks;
   document.getElementById("statFish").textContent = counts.fish;
   document.getElementById("statShells").textContent = counts.shells;
   document.getElementById("statOther").textContent = counts.other;
+  document.getElementById("statBirds").textContent = counts.birds;
   document.getElementById("statSpotted").textContent = SPECIES.filter(s=>s.spotted).length;
 }
 
